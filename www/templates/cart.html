@@ -1,0 +1,31 @@
+<ion-view  cache-view="false" view-title="{{'cartList' }}">
+
+    
+        <ion-content class="padding" id="cart_list_page" ng-init="getCartList()">
+        <p>{{'items'}} </p>
+            <div ng-if="cartListItems.length>0">
+        <div class="list checkoutItems" ng-repeat="item in cartListItems track by $index">
+          <div class="item"><button class="button button-icon button-clear ion ion-android-close  button-assertive"  style="right: 0;float: right; " ng-if="!editOrderVal" ng-click="remove_item_from_cart(item)"></button>
+            <h2>{{item.item_name}}</h2>
+            <div class="row customRow">
+              
+              <div class="col col-center last-col"><strong>{{item.item_cost}}</strong></div>
+            </div>
+          </div>
+        </div>
+              
+        <div class="list amountChecklist">
+              <div class="item item-divider"> {{'totalCost'}} <span class="item-note"> {{cost.totalCost }} </span> </div>
+        </div>
+        <button class="button-block button button-assertive"
+                ng-click="opensourcemodal()">{{'Order'}}</button>
+        </div>
+    
+        <div class="list grandTotal" ng-if="cartListItems.length==0" >
+          <div class="item">noItemsInCart</div>
+        </div>
+    
+        
+      </ion-content>
+    </ion-view>
+    

@@ -1,9 +1,23 @@
-<ion-view view-title="Playlists">
+<ion-view view-title="HTC">
   <ion-content>
     <ion-list>
-      <ion-item ng-repeat="playlist in imr" href="#/app/playlists/{{playlist._id}}">
+      <!-- <ion-item ng-repeat="playlist in imr" href="#/app/playlists/{{playlist._id}}">
         {{playlist.item_name}}
-      </ion-item>
+      </ion-item> -->
+      <div class="list listLink filter">
+        <a class="item item-button-right item-text-wrap item-thumbnail-left" ng-repeat="playlist in imr" href="#/app/playlists/{{playlist._id}}/{{playlist.item_name}}">
+          <img ng-src="http://localhost:8000/{{playlist.item_image_name}}">
+          <div>
+            {{playlist.item_name}}
+            <div class="amount">
+              <h2 class="addedAmount"><i class="icon mdi mdi-currency-inr"></i>
+                {{playlist.item_cost | number:2}}</h2>
+            </div>
+          </div>
+         
+        </a>
+        </div>
+
     </ion-list>
   </ion-content>
 </ion-view>

@@ -1,11 +1,11 @@
-<ion-view view-title="Playlist">
+<ion-view view-title="{{itemname}}">
   <ion-content>
     <!-- <h1>Playlist</h1> -->
     <div class="padding">
 		<img ng-src="http://localhost:8000/{{selected_item.item_image_name}}"  class="full-image" alt="">
 			<div class="list profileDetails">
 				<div class="item item-icon-left item-button-right">
-					<i class="icon"><span>{{siteSettings.currency_symbol}}</span></i> {{'cost' }} {{selected_item.item_cost}}
+					<i class="icon"><span><i class="icon mdi mdi-currency-inr"></i></span></i> {{'cost' }} {{selected_item.item_cost}}
 					<button class="button button-icon button-green flaticon-commerce" ng-click="addToCart(selected_item)">
 			        </button>
 				</div>
@@ -17,7 +17,7 @@
 					</p>
 				</div>
 			</div>
-			<button class="button-block button button-assertive" ng-disabled="disableButtons" ng-style="disableTagButton" ng-click="viewCart()">{{'viewCart'}}</button>
+			<button class="button-block button button-assertive" ng-click="viewCart()">{{'ViewCart'}}</button>
 		</div>
   </ion-content>
 </ion-view>

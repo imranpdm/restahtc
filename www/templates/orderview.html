@@ -1,0 +1,43 @@
+<ion-view view-title="Your Order">
+    <ion-content>
+        <div class="list card">
+
+            <a href="#" class="item item-icon-left">
+              Order ID : {{order_id}}
+            </a>
+          
+            <a class="item item-icon-left">
+              Items : {{items}}
+            </a>
+          
+            <a class="item item-icon-left">
+              Total Cost : {{total_cost}}
+            </a>
+          
+            <a class="item item-icon-left">
+              {{source}}  -  {{destination}}
+            </a>
+          
+          </div>
+    </ion-content>
+</ion-view>
+
+<!-- <ion-modal-view>
+    <ion-header-bar class="bar bar-header bar-positive">
+      <h1 class="title">Add Location</h1>
+      <button class="button button-clear button-primary" ng-click="omodal.hide()">Cancel</button>
+    </ion-header-bar>
+    <ion-content class="padding">
+      <div class="list">
+        <label class="item item-input">
+          <span class="input-label">Source</span>
+          <input ng-model="newUser.source" type="text">
+        </label>
+        <label class="item item-input">
+          <span class="input-label">Detination</span>
+          <input ng-model="newUser.destination" type="text">
+        </label>
+        <button class="button button-full button-positive" ng-click="saveAndContinue(newUser)">Add</button>
+      </div>
+    </ion-content>
+  </ion-modal-view> -->

@@ -59,8 +59,29 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngStorage'])
       }
     })
 
+    .state('app.cart', {
+      url: '/cart',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/cart.html',
+          controller: 'cartListCtrl'
+        }
+      }
+    })
+    .state('app.orderview', {
+      // url: '/fdash/?param=value&baz=valueBaz',
+
+      url: '/orderview/?order_id=v1&items=v2&total_cost=v3&source=v4&destination=v5',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/orderview.html',
+          controller: 'ordViewCtrl'
+        }
+      }
+    })
+
   .state('app.single', {
-    url: '/playlists/:playlistId',
+    url: '/playlists/:playlistId/:itemname',
     views: {
       'menuContent': {
         templateUrl: 'templates/playlist.html',
@@ -81,44 +102,5 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngStorage'])
               }
           });
           return result;
-      },
-      this.findAddonIndexInCartList = function(Array, property, action) {
-         console.log("Array  "+JSON.stringify(Array));
-          var defer = $q.defer();
-          var result = -1;
-          if (Array.length == 0) {
-              defer.resolve(-1);
-          } else {
-              angular.forEach(Array, function(value, key) {
-                 console.log("value  "+JSON.stringify(value.addon_id));
-                 console.log("action  "+action);
-                  if (value.addon_id == action) {
-                      console.log("index  "+key);
-                      result = key;
-                  }
-                  if(Array.length-1 == key){
-                      defer.resolve(result);
-                  }
-              });
-
-          }
-          return defer.promise;
-      },
-      this.findItemIndexInAddons = function(Array, property, action) {
-          var defer = $q.defer();
-          var result = -1;
-          if (Array.length == 0) {
-              defer.resolve(result);
-          } else {
-              angular.forEach(Array, function(value, index) {
-                  if (value.item_id == action) {
-                      result = index;
-                      defer.resolve(result);
-                  } else {
-                      defer.resolve(result);
-                  }
-              });
-          }
-          return defer.promise;
       }
 });
